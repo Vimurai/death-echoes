@@ -42,15 +42,20 @@ harmless to anyone actually standing there.
 
 ## Install
 
-1. Download the latest `DeathEchoes.jar` from **[Releases](../../releases/latest)**.
+1. Grab the jar attached to the **[latest release](../../releases/latest)** —
+   it's version-stamped, e.g. `DeathEchoes-0.1.2.jar`.
 2. Drop it into your server's `plugins/` folder.
 3. Restart the server.
 4. That's it — no dependencies, no other plugins required.
 
-Each release also attaches a version-stamped copy (e.g. `DeathEchoes-0.1.2.jar`) —
-same file, just useful for confirming exactly what got installed. `DeathEchoes.jar`
-itself always stays the same filename across releases, so scripted pulls of
-`releases/latest/download/DeathEchoes.jar` don't need to change.
+The asset filename changes with every version, so a scripted pull should
+resolve it from the GitHub API rather than hardcoding a name, e.g.:
+
+```
+curl -s https://api.github.com/repos/Vimurai/death-echoes/releases/latest \
+  | grep browser_download_url | cut -d '"' -f 4
+```
+
 `/deathechoes info` in-game also reports the running version directly.
 
 **Requirements:** Paper (or a Paper fork) for **Minecraft 1.21.11 / 26.2**,
