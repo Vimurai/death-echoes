@@ -47,6 +47,12 @@ harmless to anyone actually standing there.
 3. Restart the server.
 4. That's it — no dependencies, no other plugins required.
 
+Each release also attaches a version-stamped copy (e.g. `DeathEchoes-0.1.2.jar`) —
+same file, just useful for confirming exactly what got installed. `DeathEchoes.jar`
+itself always stays the same filename across releases, so scripted pulls of
+`releases/latest/download/DeathEchoes.jar` don't need to change.
+`/deathechoes info` in-game also reports the running version directly.
+
 **Requirements:** Paper (or a Paper fork) for **Minecraft 1.21.11 / 26.2**,
 running on **Java 25+**.
 
